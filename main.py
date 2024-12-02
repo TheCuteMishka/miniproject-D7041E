@@ -2,6 +2,7 @@ from evaluate.train import train_models
 from data.prepare_datasets import get_data
 from numpy import ndarray
 
+
 def main():
 
     datasets: tuple[ndarray, ndarray, ndarray, ndarray, ndarray] = get_data()
