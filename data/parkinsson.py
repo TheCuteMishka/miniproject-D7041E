@@ -22,12 +22,6 @@ def prepare_parkinsson():
         if label == 0:
             zero_counter += 1
 
-    print(zero_counter,
-          one_counter,
-          f"1 - {100*one_counter/(one_counter + zero_counter)} %",
-          f"0 - {100*zero_counter/(one_counter + zero_counter)} %",
-    )
-
     train_samples_amount = int(0.8 * (zero_counter + one_counter))
     test_samples_amount = (zero_counter + one_counter) - train_samples_amount
 
@@ -37,14 +31,6 @@ def prepare_parkinsson():
 
     ones_limit_test = int(test_samples_amount*0.7538461538461539) + 1
     zeros_limit_test = int(test_samples_amount*0.24615384615384617) + 1
-
-    print(
-        f"ones_limit_train: {ones_limit_train}",
-        f"zeros_limit_train: {zeros_limit_train}",
-        f"ones_limit_test: {ones_limit_test}",
-        f"zeros_limit_test: {zeros_limit_test}",
-        sep="\n"
-    )
 
     amount_of_train_ones = 0
     amount_of_train_zeros = 0
