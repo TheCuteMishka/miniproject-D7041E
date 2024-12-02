@@ -12,4 +12,4 @@ def prepare_iris():
 
     test_data = np.vstack((data[:10], data[50 : 50 + 10], data[100: 110]))
     test_labels = np.concatenate((targets[:10], targets[50 : 50 + 10], targets[100: 110]))
-    return train_data, train_labels, test_data, test_labels
+    return train_data, train_labels, test_data, test_labels, "iris"
