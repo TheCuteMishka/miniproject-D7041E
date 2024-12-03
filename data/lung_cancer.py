@@ -10,24 +10,12 @@ def prepare_lungcancer():
     data = lung_cancer.data.features.to_numpy()
     labels = lung_cancer.data.targets.to_numpy().reshape(-1)
 
-    print(data)
-    print(data.shape)
-
     missing_values_indices = []
-
-    print(
-        f"y axis length: {data.shape[0]}",
-        f"x axis length: {data.shape[1]}",
-        sep="\n"
-    )
-
 
     for y_idx in range(data.shape[0]):
         for x_idx in range(data.shape[1]):
             if np.isnan(data[y_idx][x_idx]):
                 missing_values_indices.append((x_idx, y_idx))
-
-    print(missing_values_indices)
 
     cached_cols_missing_values = {y: None for index, (x, y) in enumerate(missing_values_indices)}
 
@@ -60,13 +48,6 @@ def prepare_lungcancer():
     for label in labels:
         labels_to_amount[label] += 1
 
-    print(
-        "",
-        f"label\t|\tsamples per label\t|\tTotal percentage of dataset",
-        f"-" * 60,
-        sep="\n"
-    )
-
     label_ratio_over_datasets = {
         1: -1,
         2: -1,
@@ -76,13 +57,8 @@ def prepare_lungcancer():
     total_labels = 32
 
     for label, label_amount in labels_to_amount.items():
-        print(
-            f"{label}\t\t|\t\t{label_amount}\t\t\t\t|\t{label_amount/float(total_labels)*100} %",
-            sep="\n"
-        )
         label_ratio_over_datasets[label] = float(label_amount)/float(total_labels)
 
-    print()
 
     train_set_to_total_ratio = 0.8
 
@@ -93,19 +69,6 @@ def prepare_lungcancer():
     ones_limit_test = labels_to_amount[1] - ones_limit_train
     twos_limit_test = labels_to_amount[2] - twos_limit_train
     threes_limit_test = labels_to_amount[3] - threes_limit_train
-
-    print(
-        f"ones_limit_train:\t{ones_limit_train}",
-        f"twos_limit_train:\t{twos_limit_train}",
-        f"threes_limit_train:\t{threes_limit_train}",
-        f"ones_limit_test:\t{ones_limit_test}",
-        f"twos_limit_test:\t{twos_limit_test}",
-        f"threes_limit_test:\t{threes_limit_test}",
-        f"Total:\t\t{sum([ones_limit_train, twos_limit_train, threes_limit_train,
-                          ones_limit_test, twos_limit_test, threes_limit_test
-                          ])}",
-        sep="\n"
-    )
 
     train_data = []
     test_data = []
@@ -147,12 +110,12 @@ def prepare_lungcancer():
 
         elif label == 3 and threes_in_test < threes_limit_test:
             threes_in_test += 1
-            train_data.append(data[index])
-            train_labels.append(label)
+            test_data.append(data[index])
+            test_labels.append(label)
 
     train_data = np.array(train_data)
     test_data = np.array(test_data)
-    train_labels = np.array(train_labels)
-    test_labels = np.array(test_labels)
+    train_labels = np.array(train_labels) - 1
+    test_labels = np.array(test_labels) - 1
 
     return train_data, train_labels, test_data, test_labels, "Lung Cancer"

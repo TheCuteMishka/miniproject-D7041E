@@ -1,15 +1,16 @@
 from evaluate.train import train_models
+from evaluate.test import test_models
 from data.prepare_datasets import get_data
-from numpy import ndarray
+from typing import Any
 
 
 def main():
 
-    datasets: tuple[ndarray, ndarray, ndarray, ndarray, ndarray] = get_data()
+    datasets: tuple[Any, ...] = get_data()
 
     hyperparameters_to_vary: dict[str, tuple] = {
         "RandomForest": (50, 100, 150, 200, 250), # n-estimators
-        "k-means": ("lloyd", "elkan") #TODO: Add hyperparameter to variate that is not FIXED!
+        "k-means": ("lloyd", "elkan") # Algorithm to chose
     }
 
     trained_random_forest_models, trained_kmeans_models = train_models(datasets, hyperparameters_to_vary)
@@ -21,7 +22,8 @@ def main():
         sep="\n"
           )
 
-    # TODO: Make Testing calls below!
+    # Test will get the classification report into '.txt' format into respective files.
+    test_models(trained_random_forest_models, trained_kmeans_models, datasets)
 
 
 if __name__ == "__main__":
