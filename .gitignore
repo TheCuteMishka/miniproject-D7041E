@@ -1,0 +1,36 @@
+/results.zip
+/results/kmeans_elkan_fertility_results.txt
+/results/kmeans_elkan_iris_results.txt
+/results/kmeans_elkan_Lung Cancer_results.txt
+/results/kmeans_elkan_parkinsson_results.txt
+/results/kmeans_elkan_wine_results.txt
+/results/kmeans_lloyd_fertility_results.txt
+/results/kmeans_lloyd_iris_results.txt
+/results/kmeans_lloyd_Lung Cancer_results.txt
+/results/kmeans_lloyd_parkinsson_results.txt
+/results/kmeans_lloyd_wine_results.txt
+/results/RandomForest_50_fertility_results.txt
+/results/RandomForest_50_iris_results.txt
+/results/RandomForest_50_Lung Cancer_results.txt
+/results/RandomForest_50_parkinsson_results.txt
+/results/RandomForest_50_wine_results.txt
+/results/RandomForest_100_fertility_results.txt
+/results/RandomForest_100_iris_results.txt
+/results/RandomForest_100_Lung Cancer_results.txt
+/results/RandomForest_100_parkinsson_results.txt
+/results/RandomForest_100_wine_results.txt
+/results/RandomForest_150_fertility_results.txt
+/results/RandomForest_150_iris_results.txt
+/results/RandomForest_150_Lung Cancer_results.txt
+/results/RandomForest_150_parkinsson_results.txt
+/results/RandomForest_150_wine_results.txt
+/results/RandomForest_200_fertility_results.txt
+/results/RandomForest_200_iris_results.txt
+/results/RandomForest_200_Lung Cancer_results.txt
+/results/RandomForest_200_parkinsson_results.txt
+/results/RandomForest_200_wine_results.txt
+/results/RandomForest_250_fertility_results.txt
+/results/RandomForest_250_iris_results.txt
+/results/RandomForest_250_Lung Cancer_results.txt
+/results/RandomForest_250_parkinsson_results.txt
+/results/RandomForest_250_wine_results.txt
