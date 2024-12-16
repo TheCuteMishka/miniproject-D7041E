@@ -5,12 +5,12 @@ dataset: parkinsson	hyperparmeter: elkan	model: KMeans(algorithm='elkan', n_clus
 ------------------------------------------------------------
               precision    recall  f1-score   support
 
-           0       0.19      0.70      0.30        10
-           1       0.25      0.03      0.06        30
+           0       0.10      0.20      0.13        10
+           1       0.58      0.37      0.45        30
 
-    accuracy                           0.20        40
-   macro avg       0.22      0.37      0.18        40
-weighted avg       0.24      0.20      0.12        40
+    accuracy                           0.33        40
+   macro avg       0.34      0.28      0.29        40
+weighted avg       0.46      0.33      0.37        40
 
 ------------------------------------------------------------
 

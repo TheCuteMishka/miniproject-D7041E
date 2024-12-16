@@ -5,12 +5,12 @@ dataset: fertility	hyperparmeter: lloyd	model: KMeans(n_clusters=2)
 ------------------------------------------------------------
               precision    recall  f1-score   support
 
-           0       0.88      0.83      0.86        18
-           1       0.25      0.33      0.29         3
+           0       0.75      0.17      0.27        18
+           1       0.12      0.67      0.20         3
 
-    accuracy                           0.76        21
-   macro avg       0.57      0.58      0.57        21
-weighted avg       0.79      0.76      0.78        21
+    accuracy                           0.24        21
+   macro avg       0.43      0.42      0.24        21
+weighted avg       0.66      0.24      0.26        21
 
 ------------------------------------------------------------
 
