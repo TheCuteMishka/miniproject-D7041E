@@ -1,13 +1,13 @@
 import os
 
-def create_table():
+def create_table(witdh = 8, height = 6):
 
     sep = r"\\" if os.name == "nt" else "/"
     results_directory: str = rf"results{sep}"
 
     # (0,0) is empty
     accuracy_table = [
-        [0.0 for _ in range(8)] for _ in range(6)
+        [0.0 for _ in range(witdh)] for _ in range(height)
     ]
 
     first_row = 0

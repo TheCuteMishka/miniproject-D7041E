@@ -4,6 +4,9 @@ import os
 # TODO: Implement test logic by getting the data with 'get_data()'
 #       it returns a tuple of all datasets in the project.
 def test_models(trained_random_forest_models, trained_kmeans_models, datasets):
+    results_dir = "results"
+    if not os.path.exists(results_dir):
+        os.makedirs(results_dir)
 
     name_to_dataset = {
         dataset_name: (test_data, test_labels)  for _, _, test_data, test_labels, dataset_name in datasets

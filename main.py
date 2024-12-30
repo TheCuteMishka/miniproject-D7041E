@@ -6,11 +6,11 @@ from typing import Any
 
 
 def main():
-
     datasets: tuple[Any, ...] = get_data()
 
     hyperparameters_to_vary: dict[str, tuple] = {
-        "RandomForest": (50, 100, 150, 200, 250), # n-estimators
+        #"RandomForest": (50, 100, 150, 200, 250, 10_000), # n-estimators
+        "RandomForest": (50, 100, 150, 200, 250, 250),
         "k-means": ("lloyd", "elkan") # Algorithm to chose
     }
 
